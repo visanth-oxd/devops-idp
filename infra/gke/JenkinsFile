@@ -8,6 +8,14 @@ pipeline {
             steps {
                 checkout scm
             }
+            post {
+                always {
+                    dir('gke/infra') {
+                        // This is a no-op command that does nothing. It's only purpose is to change the current directory.
+                        sh ''
+                    }
+                }
+            }
         }
         stage('Terraform Init') {
             steps {
