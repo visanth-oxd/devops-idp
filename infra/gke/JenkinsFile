@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        GOOGLE_CREDENTIALS = credentials('my-secret-id')
+        GOOGLE_CREDENTIALS = credentials('gcp-terraform-creds')
     }
     stages {
         stage('Checkout') {
