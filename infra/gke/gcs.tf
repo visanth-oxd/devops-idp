@@ -4,5 +4,4 @@ resource "google_storage_bucket" "auto-expire" {
   force_destroy = true
   project = "silicon-dialect-384707"
 
-  public_access_prevention = "enforced"
 }
