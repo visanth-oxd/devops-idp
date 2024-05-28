@@ -11,21 +11,21 @@ pipeline {
         }
         stage('Terraform Init') {
             steps {
-                dir('gke/infra') {
+                dir('infra/gke') {
                     sh 'terraform init'
                 }
             }
         }
         stage('Terraform Plan') {
             steps {
-                dir('gke/infra') {
+                dir('infra/gke') {
                     sh 'terraform plan -out=tfplan'
                 }
             }
         }
         stage('Terraform Apply') {
             steps {
-                dir('gke/infra') {
+                dir('infra/gke') {
                     sh 'terraform apply -auto-approve tfplan'
                 }
             }
